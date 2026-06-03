@@ -1,0 +1,7 @@
+interface:
+  display_name: "Creator-kit"
+  short_description: "Plan creator content and reusable assets"
+  default_prompt: "Use $creator-kit to turn this idea into a channel-aware content plan."
+
+policy:
+  allow_implicit_invocation: true

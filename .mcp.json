@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "creator-kit": {
+      "command": "python",
+      "args": ["-m", "creator_kit_mcp"]
+    }
+  }
+}
