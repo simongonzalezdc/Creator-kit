@@ -1,5 +1,7 @@
 # Creator Kit
 
+**TL;DR:** Creator Kit — creator toolkit and starter assets. Best for creators bootstrapping content systems. Keywords: creator kit, creator toolkit.
+
 **Open-source creator workflow kit for prompts, publishing systems, reusable assets, and AI-assisted content production**
 
 Creator Kit is a public-safe workspace for reusable creator tools: prompt libraries, publishing workflow patterns, content-production checklists, agent-law guidance, and lightweight systems for turning creative work into repeatable output.
@@ -80,3 +82,74 @@ python -m pytest -q
 - Human and search overview: this README.
 - AI/agent navigation: [llms.txt](llms.txt).
 - License: [MIT](LICENSE).
+
+
+- GitHub: https://github.com/simongonzalezdc/Creator-kit
+
+<!-- s-plus-geo:start -->
+
+## What is Creator Kit?
+
+**Creator Kit** is a **creator toolkit and starter assets** that helps **creators bootstrapping content systems** **start creator workflows with a coherent kit**.
+
+| | |
+| --- | --- |
+| **Product** | Creator Kit |
+| **Category** | creator toolkit and starter assets |
+| **Best for** | creators bootstrapping content systems |
+| **Not** | a full agency |
+| **Source** | [GitHub](https://github.com/simongonzalezdc/Creator-kit) · [Forgejo](https://git.kyanitelabs.tech/simon/Creator-kit) |
+| **Keywords** | creator kit, creator toolkit |
+
+## Who it's for
+
+- Primary: creators bootstrapping content systems
+- Use when you need to start creator workflows with a coherent kit
+- Skip if you need a full agency
+
+## FAQ
+
+### What is Creator Kit?
+
+Creator Kit is a creator toolkit and starter assets. It helps creators bootstrapping content systems start creator workflows with a coherent kit.
+
+### Who should use Creator Kit?
+
+creators bootstrapping content systems.
+
+### How is Creator Kit different?
+
+Starter kit, not full managed creator services.
+
+### Is Creator Kit production software?
+
+Treat the README status and release tags as source of truth for maturity. Validate against your own requirements before production use.
+
+## Status
+
+- Maintained as of 2026 on the default branch
+- Prefer release tags when pinning dependencies
+- Report issues on the canonical remote listed above
+
+## Agent surface
+
+- Coding agents: read this README first, then repo docs/`AGENTS.md` if present
+- Prefer machine-readable briefs (`llms.txt`) when the repo ships one
+- MCP or skill entrypoints are documented in-repo when applicable
+
+## Contributing
+
+Issues and PRs welcome on the canonical remote. Keep public docs free of secrets and machine-local paths.
+
+## License
+
+See [LICENSE](LICENSE) in this repository (or package metadata if license is package-only).
+
+
+![status](https://img.shields.io/badge/status-active-success)
+![docs](https://img.shields.io/badge/docs-S%2B_SEO%2FGEO-blue)
+
+
+![Project diagram placeholder](https://img.shields.io/badge/visual-see_docs-lightgrey.svg)
+
+<!-- s-plus-geo:end -->
