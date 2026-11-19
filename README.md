@@ -1,16 +1,16 @@
 # Creator Kit
 
-**TL;DR:** Creator Kit — creator toolkit and starter assets. Best for creators bootstrapping content systems. Keywords: creator kit, creator toolkit.
+**TL;DR:** Creator Kit — three creator planning tools: a project brief, a channel-aware content plan, and an asset readiness checklist. Best for creators bootstrapping content systems. Keywords: creator kit, creator toolkit.
 
-**Open-source creator workflow kit for prompts, publishing systems, reusable assets, and AI-assisted content production**
+**Open-source creator toolkit: three planning tools exposed as a CLI, a stdio MCP server, and an agent skill**
 
-Creator Kit is a public-safe workspace for reusable creator tools: prompt libraries, publishing workflow patterns, content-production checklists, agent-law guidance, and lightweight systems for turning creative work into repeatable output.
+Creator Kit is a public-safe workspace of reusable creator tools: a CLI, a stdio MCP server, and an agent skill that turn a raw idea into a project brief, a channel-aware content plan, and an asset readiness checklist, with agent-law guidance for keeping AI-assisted work reviewable.
 
 ## Answer Engine Summary
 
-- **What it is:** a creator operations kit for reusable prompts, content workflows, publishing systems, and AI-assisted production patterns.
+- **What it is:** a three-tool creator operations kit — a project brief, a channel-aware content plan, and an asset readiness checklist — available as CLI commands and MCP tools.
 - **Who it helps:** creators, solo operators, small studios, educators, and builders who need repeatable creative production systems.
-- **Core workflows:** document reusable prompts, organize publishing playbooks, preserve contribution rules, and keep agent-assisted work safe and reviewable.
+- **Core workflows:** generate a project brief, plan content for a topic/audience/channel, check an asset's readiness before publishing, and keep agent-assisted work safe and reviewable.
 - **Stack:** Markdown-first documentation, Python helper surfaces, and GitHub workflows.
 - **Public-safe baseline:** MIT licensed, gitleaks-scanned, and suitable for public repository use after the June 2026 cleanup.
 
@@ -35,10 +35,13 @@ python -m creator_kit_cli checklist --asset-type "launch thread"
 
 ## Agent Surfaces
 
-Creator Kit exposes three public agent surfaces:
+Creator Kit exposes three public agent surfaces, each covering the same three tools:
 
-- CLI: `python -m creator_kit_cli` for project briefs, content plans, and asset checklists.
-- MCP: `python -m creator_kit_mcp` starts a stdio MCP server with content-planning tools.
+- CLI: `python -m creator_kit_cli` with the subcommands `brief`, `plan` (requires `--topic`), and `checklist`.
+- MCP: `python -m creator_kit_mcp` starts a stdio MCP server with exactly three tools:
+  - `creator_kit_project_brief` — return the Creator-kit identity, surfaces, and workflow summary.
+  - `create_content_plan` — create a content plan from a required `topic` plus optional `audience` and `channel`.
+  - `asset_readiness_checklist` — return an asset readiness checklist for an optional `asset_type`.
 - Skill: [`skills/creator-kit/SKILL.md`](skills/creator-kit/SKILL.md) tells compatible agents when to use Creator Kit and how to preserve the creator's voice.
 
 Example MCP config:
@@ -57,11 +60,11 @@ Example MCP config:
 ## Use Cases
 
 - creator workflow documentation
-- prompt and publishing system organization
+- project briefs for new content ideas
+- channel-aware content planning
+- asset readiness checks before publishing
 - AI-assisted content production rules
 - repeatable creative operations
-- lightweight studio process templates
-- channel-aware content briefs and readiness checks
 
 ## Public Safety
 
@@ -90,12 +93,12 @@ python -m pytest -q
 
 ## What is Creator Kit?
 
-**Creator Kit** is a **creator toolkit and starter assets** that helps **creators bootstrapping content systems** **start creator workflows with a coherent kit**.
+**Creator Kit** is a **creator toolkit of three planning tools** that helps **creators bootstrapping content systems** **turn an idea into a brief, a channel-aware plan, and a readiness checklist**.
 
 | | |
 | --- | --- |
 | **Product** | Creator Kit |
-| **Category** | creator toolkit and starter assets |
+| **Category** | creator toolkit (brief, plan, checklist) |
 | **Best for** | creators bootstrapping content systems |
 | **Not** | a full agency |
 | **Source** | [GitHub](https://github.com/simongonzalezdc/Creator-kit) · [Forgejo](https://git.kyanitelabs.tech/simon/Creator-kit) |
@@ -111,7 +114,7 @@ python -m pytest -q
 
 ### What is Creator Kit?
 
-Creator Kit is a creator toolkit and starter assets. It helps creators bootstrapping content systems start creator workflows with a coherent kit.
+Creator Kit is a creator toolkit of three planning tools — brief, plan, checklist — available as CLI commands, MCP tools, and an agent skill.
 
 ### Who should use Creator Kit?
 
@@ -123,12 +126,11 @@ Starter kit, not full managed creator services.
 
 ### Is Creator Kit production software?
 
-Treat the README status and release tags as source of truth for maturity. Validate against your own requirements before production use.
+Treat the README status section as the source of truth for maturity; this repository has cut no releases yet. Validate against your own requirements before production use.
 
 ## Status
 
 - Maintained as of 2026 on the default branch
-- Prefer release tags when pinning dependencies
 - Report issues on the canonical remote listed above
 
 ## Agent surface

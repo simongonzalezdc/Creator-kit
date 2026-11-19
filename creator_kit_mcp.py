@@ -11,6 +11,16 @@ from creator_kit_cli import asset_checklist, content_plan, project_brief
 
 PROTOCOL_VERSION = "2024-11-05"
 
+def _content_plan_handler(args: dict[str, Any]) -> dict[str, Any]:
+    """Reject a missing topic the way the CLI rejects a missing --topic (exit 2)."""
+    topic = str(args.get("topic") or "").strip()
+    if not topic:
+        raise ValueError(
+            "create_content_plan: 'topic' is required and must be a non-empty string"
+        )
+    return content_plan(args)
+
+
 TOOLS = {
     "creator_kit_project_brief": {
         "description": "Return Creator-kit identity, surfaces, and workflow summary.",
@@ -18,8 +28,8 @@ TOOLS = {
         "inputSchema": {"type": "object", "properties": {}},
     },
     "create_content_plan": {
-        "description": "Create a reusable content plan from topic, audience, and channel.",
-        "handler": content_plan,
+        "description": "Create a reusable content plan from a required topic plus optional audience and channel.",
+        "handler": _content_plan_handler,
         "inputSchema": {
             "type": "object",
             "properties": {
