@@ -1,11 +1,11 @@
 ---
 name: creator-kit
-description: Use Creator-kit for creator workflows, content briefs, publishing systems, reusable asset planning, prompt kits, and AI-assisted content production. Trigger when an agent needs to turn an idea into a channel-aware plan or check whether a draft is ready to publish.
+description: Use Creator-kit for creator workflows, content briefs, channel-aware content planning, asset readiness checks, and AI-assisted content production. Trigger when an agent needs to turn an idea into a channel-aware plan or check whether a draft is ready to publish.
 ---
 
 # Creator-kit
 
-Use this skill when a task involves creator systems, content planning, reusable prompt/assets, publishing workflows, or draft readiness.
+Use this skill when a task involves creator systems, content planning, asset planning, publishing workflows, or draft readiness.
 
 ## Start Here
 
@@ -41,6 +41,16 @@ python -m creator_kit_cli checklist --asset-type "launch thread"
   }
 }
 ```
+
+## MCP Tools
+
+The MCP server exposes exactly three tools:
+
+- `creator_kit_project_brief` — return the Creator-kit identity, surfaces, and workflow summary.
+- `create_content_plan` — create a content plan from a required `topic` plus optional `audience` and `channel`. A missing or empty `topic` returns a JSON-RPC error, matching the CLI's exit 2.
+- `asset_readiness_checklist` — return an asset readiness checklist for an optional `asset_type`.
+
+The CLI mirrors these tools as the subcommands `brief`, `plan` (requires `--topic`), and `checklist`.
 
 ## Guardrails
 

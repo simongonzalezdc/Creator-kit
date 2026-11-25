@@ -11,7 +11,7 @@ from typing import Any
 def project_brief() -> dict[str, Any]:
     return {
         "name": "Creator-kit",
-        "summary": "Open-source creator workflow kit for prompts, publishing systems, reusable assets, and AI-assisted content production.",
+        "summary": "Open-source creator toolkit: three planning tools (brief, plan, checklist) exposed as a CLI, a stdio MCP server, and an agent skill.",
         "surfaces": {
             "cli": "python -m creator_kit_cli",
             "mcp": "python -m creator_kit_mcp",

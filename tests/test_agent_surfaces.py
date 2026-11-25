@@ -19,3 +19,32 @@ def test_mcp_lists_tools():
         tool["name"] == "asset_readiness_checklist"
         for tool in response["result"]["tools"]
     )
+
+
+def test_mcp_content_plan_requires_topic():
+    response = handle_message(
+        {
+            "jsonrpc": "2.0",
+            "id": 2,
+            "method": "tools/call",
+            "params": {"name": "create_content_plan", "arguments": {}},
+        }
+    )
+
+    assert response is not None
+    assert response["error"]["code"] == -32602
+    assert "topic" in response["error"]["message"]
+
+
+def test_mcp_content_plan_rejects_whitespace_topic():
+    response = handle_message(
+        {
+            "jsonrpc": "2.0",
+            "id": 3,
+            "method": "tools/call",
+            "params": {"name": "create_content_plan", "arguments": {"topic": "   "}},
+        }
+    )
+
+    assert response is not None
+    assert response["error"]["code"] == -32602
